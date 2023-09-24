@@ -3,8 +3,8 @@ package com.krakedev;
 public class TestAuto {
 
 	public static void main(String[] args) {
-		Auto auto1 =new Auto();
-		Auto auto2 = new Auto();
+		Auto auto1 =new Auto("Toyota", 2023, 6000);
+		Auto auto2 = new Auto("Ford", 2012, 8000);
 		
 		auto1.setMarca("Toyota");
 		auto1.setAnio(2023);
