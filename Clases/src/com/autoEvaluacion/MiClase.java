@@ -1,7 +1,7 @@
 package com.autoEvaluacion;
 
-	public class MiClase {
-		void miMetodo() public {}  
+	public class MiClase {  
+		public void miMetodo() {}
 	}
 
 	

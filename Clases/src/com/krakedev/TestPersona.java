@@ -11,17 +11,17 @@ public class TestPersona {
 		Persona p2 = new Persona();
 
 		// 3. Accedo a los atributos
-		System.out.println("nombre: " + p.getNombre());
-		System.out.println("edad: " + p.getEdad());
-		System.out.println("estatura: " + p.getEstatura());
+		System.out.println("nombre: " + p.nombre);
+		System.out.println("edad: " + p.edad);
+		System.out.println("estatura: " + p.estatura);
 
 		System.out.println("---------------------");
-		System.out.println("nombre: " + p2.getNombre());
-		System.out.println("edad: " + p2.getEdad());
-		System.out.println("estatura: " + p2.getEstatura());
+		System.out.println("nombre: " + p2.nombre);
+		System.out.println("edad: " + p2.edad);
+		System.out.println("estatura: " + p2.estatura);
 
-		p.setNombre("Anthony");
-		System.out.println("nombre:" + p.getNombre());
+		p.nombre = "Anthony";
+		System.out.println("nombre:" + p.nombre);
 
 	}
 
