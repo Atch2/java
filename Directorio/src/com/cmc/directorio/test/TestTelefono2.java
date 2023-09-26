@@ -6,13 +6,14 @@ import com.cmc.directorio.entidades.Telefono;
 public class TestTelefono2 {
 
 	public static void main(String[] args) {
-		Telefono telf = new Telefono("movi", "098357421", 20, false);
+		Telefono telf = new Telefono("movi", "098357421", 20);
 		AdminTelefono at = new AdminTelefono();
 
 		at.activarMensajeria(telf);
-		System.out.println(
-				telf.getOperadora() + " " + telf.getNumero() + " " + telf.getCodigo() + " " + telf.getTieneWhatsapp());
-
+		System.out.println("Operadora : " + telf.getOperadora());
+		System.out.println("Numero : " + telf.getNumero());
+		System.out.println("Codigo : " + telf.getCodigo());
+		System.out.println("Tiene Whatsapp : " + telf.getTieneWhatsapp());
 	}
 
 }

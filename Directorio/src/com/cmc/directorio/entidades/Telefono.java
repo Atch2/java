@@ -9,6 +9,13 @@ public class Telefono {
 	public Telefono() {
 	}
 
+	public Telefono(String operadora, String numero, int codigo) {
+		super();
+		this.operadora = operadora;
+		this.numero = numero;
+		this.codigo = codigo;
+	}
+
 	public Telefono(String operadora, String numero, int codigo, boolean tieneWhatsapp) {
 		this.operadora = operadora;
 		this.numero = numero;
