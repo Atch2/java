@@ -7,8 +7,9 @@ import com.cmc.directorio.entidades.Telefono;
 public class TestContacto1 {
 
 	public static void main(String[] args) {
+		//Instanciar un objeto
 		Telefono telf = new Telefono("movi", "0983578212", 123);
-		Contacto c = new Contacto("Anthony", "Guata", telf, 1.50);
+		Contacto c = new Contacto("Anthony", "Guata", telf, 1.70);
 		Telefono telf2 = new Telefono("movi", "0983472125", 321);
 		Contacto c2 = new Contacto("Paola", "Alban", telf2, 1.70);
 		AdminContactos ac = new AdminContactos();
@@ -20,7 +21,11 @@ public class TestContacto1 {
 				+ c2.getTelefono().getOperadora() + "\nNumero de Telefono:" + c2.getTelefono().getNumero());
 
 		Contacto peso = ac.buscarMasPesado(c, c2);
-		System.out.println("Mayor peso:" + peso.getNombre());
+		if (peso == null) {
+			System.out.println("Los pesos son iguales");
+		} else {
+			System.out.println("Mayor peso:" + peso.getNombre());
+		}
 		System.out.println("Igual Operadora: " + ac.comprarOperadoras(c, c2));
 	}
 
