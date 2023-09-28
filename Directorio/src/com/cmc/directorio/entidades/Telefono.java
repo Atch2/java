@@ -20,7 +20,7 @@ public class Telefono {
 		this.operadora = operadora;
 		this.numero = numero;
 		this.codigo = codigo;
-		this.tieneWhatsapp = false;
+		this.tieneWhatsapp = tieneWhatsapp;
 	}
 
 	public String getOperadora() {
