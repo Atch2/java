@@ -5,20 +5,22 @@ import java.util.ArrayList;
 public class TestAdminPersonas {
 
 	public static void main(String[] args) {
-		AdminPersonas admi = new AdminPersonas();
-		admi.agregar(new Persona("Mario", "Benedeti", 25));
-		admi.agregar(new Persona("Clarck", "Ken", 30));
-		admi.agregar(new Persona("Pablo", "Buen", 50));
+		AdminPersonas admin = new AdminPersonas();
+		admin.agregar(new Persona("Fabian", "Chan", 18));
+		admin.agregar(new Persona("Paola", "HOyo", 25));
+		admin.agregar(new Persona("Pablo", "Troa", 30));
+		admin.agregar(new Persona("Hernan", "Pedeo", 40));
+		admin.imprimir();
 
-		admi.imprimir();
-		Persona p1 = admi.buscarPorNombre("Antha");
-		if(p1 != null) {
-			System.out.println("ENCONTRADO: " + p1.getNombre() + " " + p1.getApellido());	
-		}else {
-			System.out.println("No existe la persona con ese nombre ");
+		Persona p1 = admin.buscarPorNombre("Paola");
+		if (p1 != null) {
+			System.out.println("Encontrado: " + p1.getNombre() + " " + p1.getApellido());
+
+		} else {
+			System.out.println("No existe la persona con ese nombre");
 		}
-		
-		ArrayList<Persona> personasMayores = admi.buscarMayores(25);
+
+		ArrayList<Persona> personasMayores = admin.buscarMayores(25);
 		System.out.println("Mayores: " + personasMayores.size());
 	}
 

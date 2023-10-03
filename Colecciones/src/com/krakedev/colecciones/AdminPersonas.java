@@ -17,34 +17,32 @@ public class AdminPersonas {
 		Persona elementoPersona;
 		for (int i = 0; i < personas.size(); i++) {
 			elementoPersona = personas.get(i);
-			System.out.println("Persona: " + elementoPersona.getNombre() + " " + elementoPersona.getApellido() + " "
-					+ elementoPersona.getEdad());
+			System.out.println("Persona: " + elementoPersona.getNombre() + " " + elementoPersona.getEdad());
 		}
 	}
 
 	public Persona buscarPorNombre(String nombre) {
 		Persona personaEncontrada = null;
-		Persona elementpPersona = null;
-		for (int i = 0; i < personas.size(); i++) {
-			elementpPersona = personas.get(i);
-
-			if (nombre.equals(elementpPersona.getNombre())) {
-				personaEncontrada = elementpPersona;
-			}
-		}
-		return personaEncontrada;
-	}
-
-	public ArrayList<Persona> buscarMayores(int edad) {
-		ArrayList<Persona> mayores = new ArrayList<Persona>();
 		Persona elementoPersona = null;
 		for (int i = 0; i < personas.size(); i++) {
 			elementoPersona = personas.get(i);
-			if (elementoPersona.getEdad() > edad) {
+			if (nombre.equals(elementoPersona.getNombre())) {
+				personaEncontrada = elementoPersona;
+			}
+		}
+
+		return personaEncontrada;
+	}
+	
+	public ArrayList<Persona> buscarMayores(int edad){
+		ArrayList<Persona> mayores = new ArrayList<Persona>();
+		Persona elementoPersona = null;
+		for(int i=0; i<personas.size(); i++) {
+			elementoPersona = personas.get(i);
+			if(elementoPersona.getEdad() >= edad) {
 				mayores.add(elementoPersona);
 			}
 		}
 		return mayores;
 	}
-
 }
