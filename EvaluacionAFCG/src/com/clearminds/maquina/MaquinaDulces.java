@@ -176,12 +176,12 @@ public class MaquinaDulces {
 			celdaEncontrada.setStock(aggItems);
 	}
 
-	public void vender(String codigo) {
-		Celda celdaEncontrada = buscarCelda(codigo);
-		int menorarStock = celdaEncontrada.getStock() -1;
-		celdaEncontrada.setStock(menorarStock);
-		double saldoMaquina = getSaldo() + celdaEncontrada.getProducto().getPrecio();
-		setSaldo(saldoMaquina);
+	public void vender(String codCelda) {
+		Celda celdaEncontrada = buscarCelda(codCelda);
+		celdaEncontrada.setStock(celdaEncontrada.getStock() -1);
+		
+		double precio = consultarPrecio(codCelda);
+		setSaldo(precio + getSaldo());
 		mostrarProductos();
 	}
 
