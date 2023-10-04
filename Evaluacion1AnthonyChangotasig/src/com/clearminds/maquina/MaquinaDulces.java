@@ -69,12 +69,12 @@ public class MaquinaDulces {
 		for (int i = 0; i < celdas.size(); i++) {
 			elementoCelda = celdas.get(i);
 			if (elementoCelda.getProducto() != null) {
-				System.out.println("\nCelda: " + elementoCelda.getCodigo() + "\nStock: " + elementoCelda.getStock()
-						+ "\nProducto: " + elementoCelda.getProducto().getNombre() + "\nPrecio: "
+				System.out.println("Celda: " + elementoCelda.getCodigo() + " Stock: " + elementoCelda.getStock()
+						+ " Producto: " + elementoCelda.getProducto().getNombre() + " Precio: "
 						+ elementoCelda.getProducto().getPrecio());
 			} else {
-				System.out.println("\nCelda: " + elementoCelda.getCodigo() + "\nStock: " + elementoCelda.getStock()
-						+ "\n Sin Producto asignado");
+				System.out.println("Celda: " + elementoCelda.getCodigo() + " Stock: " + elementoCelda.getStock()
+						+ " Sin Producto asignado");
 				System.out.println();
 			}
 		}
@@ -104,7 +104,8 @@ public class MaquinaDulces {
 		Celda elementoCelda = null;
 		for (int i = 0; i < celdas.size(); i++) {
 			elementoCelda = celdas.get(i);
-			if (elementoCelda != null && codProduc.equals(elementoCelda.getProducto().getCodigo())) {
+			if (elementoCelda != null && elementoCelda.getProducto() != null
+					&& codProduc.equals(elementoCelda.getProducto().getCodigo())) {
 				return elementoCelda;
 			}
 		}
@@ -112,10 +113,10 @@ public class MaquinaDulces {
 
 	}
 
-	public void incrementarProductos(String codProducto, int cantidadItems) {
+	public void incrementarProductos(String codProducto, int cantProducto) {
 		Celda celdaEncontrada = buscarCeldaProducto(codProducto);
-		int aggItems = cantidadItems + celdaEncontrada.getStock();
-		celdaEncontrada.setStock(aggItems);
+		int addProducto = cantProducto + celdaEncontrada.getStock();
+		celdaEncontrada.setStock(addProducto);
 	}
 
 	public void vender(String codigo) {
@@ -124,12 +125,25 @@ public class MaquinaDulces {
 		celdaEncontrada.setStock(menorarStock);
 		double saldoMaquina = getSaldo() + celdaEncontrada.getProducto().getPrecio();
 		setSaldo(saldoMaquina);
-		mostrarProductos();
 	}
 
 	public double venderConCambio(String codCelda, double valorIngresado) {
 		vender(codCelda);
 		double vuelto = valorIngresado - consultarPrecio(codCelda);
 		return vuelto;
+	}
+
+	public ArrayList<Producto> buscarMenores(double limite) {
+		ArrayList<Producto> menores = new ArrayList<Producto>();
+		Celda elementoCelda = null;
+		Producto producto = null;
+		for (int i = 0; i < celdas.size(); i++) {
+			elementoCelda  = celdas.get(i);
+			producto = elementoCelda.getProducto();
+			if(producto != null && producto.getPrecio() <= limite) {
+				menores.add(producto);
+			}
+		}
+		return menores;
 	}
 }

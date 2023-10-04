@@ -16,7 +16,7 @@ public class TestBuscarCelda {
 		System.out.println("Celda Encontrada: "+celda.getCodigo());
 		Celda celda2=maquina.buscarCelda("F");
 		if(celda2==null){
-			System.out.println("no existe la celda");
+			System.out.println("No existe la celda buscada");
 		}
 	}
 
