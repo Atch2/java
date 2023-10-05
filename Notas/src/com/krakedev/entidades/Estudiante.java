@@ -6,12 +6,13 @@ public class Estudiante {
 	private String cedula;
 	private String nombre;
 	private String apellido;
-	ArrayList<Nota> notas = new ArrayList<Nota>();
+	private ArrayList<Nota> notas;
 
 	public Estudiante(String cedula, String nombre, String apellido) {
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
+		notas = new ArrayList<Nota>();
 	}
 
 	public String getNombre() {
@@ -41,21 +42,24 @@ public class Estudiante {
 	public void agregarNota(double nvNota) {
 		Nota elementoNota = null;
 		Nota notaEncontrada = null;
-		for (int i = 0; i < notas.size(); i++) {
-			elementoNota = notas.get(i);
-			notaEncontrada = elementoNota;
-			if (nvNota >= 0 && nvNota <= 10) {
-				if (elementoNota.getCalificacion() != nvNota) {
-					notaEncontrada.setCalificacion(nvNota);
-					System.out.println("Nota agregada éxitosamente");
-				} else {
-					System.out.println("La nota ya esxiste");
-				}
+		if (notas != null) {
+			for (int i = 0; i < notas.size(); i++) {
+				elementoNota = notas.get(i);
+				notaEncontrada = elementoNota;
+				if (nvNota >= 0 && nvNota <= 10) {
+					if (elementoNota.getCalificacion() != nvNota) {
+						notaEncontrada.setCalificacion(nvNota);
+						System.out.println("Nota agregada éxitosamente");
+					} else {
+						System.out.println("La nota ya esxiste");
+					}
 
-			} else {
-				System.out.println("La nota esta fuera del rango 0-10");
+				} else {
+					System.out.println("La nota esta fuera del rango 0-10");
+				}
 			}
 		}
+
 	}
 
 	public void modificarNota(String codigo, double nvNota) {

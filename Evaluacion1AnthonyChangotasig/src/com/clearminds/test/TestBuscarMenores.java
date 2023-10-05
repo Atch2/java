@@ -39,7 +39,7 @@ public class TestBuscarMenores {
 		// Opcion 2
 		for (int i = 0; i < productosMenores.size(); i++) {
 			elementoProducto = productosMenores.get(i);
-			System.out.println("Nombre: " + elementoProducto.getNombre() + "Precio: " + elementoProducto.getPrecio());
+			System.out.println("Nombre:" + elementoProducto.getNombre() + " Precio:" + elementoProducto.getPrecio());
 		}
 	}
 
