@@ -14,7 +14,7 @@ public class TestCurso {
 		Materia lenguaje = new Materia("COD3", "Lenguaje");
 
 		Estudiante estudiante = new Estudiante("1234567890", "Juan", "Perez");
-		Estudiante estudiante2 = new Estudiante("12345678290", "Juan", "Perez");
+		Estudiante estudiante2 = new Estudiante("12345678290", "Ateo", "Suarez");
 		Nota nota1 = new Nota(sociales, 10.0);
 		Nota nota2 = new Nota(matematicas, 10.0);
 		Nota nota3 = new Nota(lenguaje, 10.0);
@@ -24,21 +24,22 @@ public class TestCurso {
 		Nota nota13 = new Nota(lenguaje, 10.0);
 
 		// Agrega 3 nuevas calificaciones a Estudiante 1
-		estudiante.agregarNota(nota1.getCalificacion());
-		estudiante.agregarNota(nota2.getCalificacion());
-		estudiante.agregarNota(nota3.getCalificacion());
+		estudiante.agregarNota(nota1);
+		estudiante.agregarNota(nota2);
+		estudiante.agregarNota(nota3);
 
 		// Agrega 3 nuevas calificaciones a Estudiante 2
-		estudiante2.agregarNota(nota11.getCalificacion());
-		estudiante2.agregarNota(nota12.getCalificacion());
-		estudiante2.agregarNota(nota13.getCalificacion());
+		estudiante2.agregarNota(nota11);
+		estudiante2.agregarNota(nota12);
+		estudiante2.agregarNota(nota13);
 
 		curso1.matricularEstudiantes(estudiante);
 		curso1.matricularEstudiantes(estudiante2);
+		curso1.matricularEstudiantes(estudiante2);
 
-		System.out.println(curso1.getEstudainte().size());
+		System.out.println("Total de estudiantes: " + curso1.getEstudainte().size());
 
-		System.out.println(curso1.calcularPromedioCurso());
+		System.out.println("Promedio del curso es: " + curso1.calcularPromedioCurso());
 
 		curso1.mostrar();
 

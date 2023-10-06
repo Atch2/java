@@ -39,47 +39,46 @@ public class Estudiante {
 		this.cedula = cedula;
 	}
 
-	public void agregarNota(double nvNota) {
+	public void agregarNota(Nota nvNota) {
 		Nota elementoNota = null;
-		Nota notaEncontrada = null;
-		if (notas != null) {
+		if (nvNota.getCalificacion() >= 0 && nvNota.getCalificacion() <= 10) {
 			for (int i = 0; i < notas.size(); i++) {
 				elementoNota = notas.get(i);
-				notaEncontrada = elementoNota;
-				if (nvNota >= 0 && nvNota <= 10) {
-					if (elementoNota.getCalificacion() != nvNota) {
-						notaEncontrada.setCalificacion(nvNota);
-						System.out.println("Nota agregada éxitosamente");
-					} else {
-						System.out.println("La nota ya esxiste");
-					}
-
-				} else {
-					System.out.println("La nota esta fuera del rango 0-10");
+				if (nvNota.getMateria().getCodigo().equals(elementoNota.getMateria().getCodigo())) {
+					System.out.println(
+							"La nota ya existe la nota con el codigo" + elementoNota.getMateria().getCodigo() + ".");
+					return;// Es como un Break, donde aqui finaliza la ejecucion y no vuelva al la linea 57
+							// para agregar una nota;
 				}
 			}
-		}
 
+			// Si no exite, añadir la nueva nota
+			notas.add(nvNota);
+			System.out.println("Se agrego la nota éxitosamente");
+		} else {
+			System.out.println("la Nota no esta en este rango 0-10");
+		}
 	}
 
 	public void modificarNota(String codigo, double nvNota) {
 		Nota notaEncontrada = null;
 		Nota elementoNota = null;
-		for (int i = 0; i < notas.size(); i++) {
-			elementoNota = notas.get(i);
-			notaEncontrada = elementoNota;
-			if (codigo.equals(elementoNota.getMateria().getCodigo())) {
-				if (nvNota >= 0 && nvNota <= 10) {
+		if (nvNota >= 0 && nvNota <= 10) {
+			for (int i = 0; i < notas.size(); i++) {
+				elementoNota = notas.get(i);
+				notaEncontrada = elementoNota;
+				if (codigo.equals(elementoNota.getMateria().getCodigo())) {
 					notaEncontrada.setCalificacion(nvNota);
-					System.out.println("Nota modificada éxitosamente");
+					System.out.println(
+							"Nota modificada éxitosamente con el codigo: " + notaEncontrada.getMateria().getCodigo());
 				} else {
-					System.out.println("La nota esta fuera del rango 0-10");
+					System.out.println("Codigo no encontrado");
 				}
-
-			} else {
-				System.out.println("Codigo no encontrado");
 			}
+		} else {
+			System.out.println("La nota esta fuera del rango 0-10");
 		}
+
 	}
 
 	public double calcularPromedioNotasEstudiante() {

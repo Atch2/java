@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class Curso {
 	private ArrayList<Estudiante> estudiantes;
 
+	public Curso() {
+		estudiantes = new ArrayList<Estudiante>();
+	}
+
 	public ArrayList<Estudiante> getEstudainte() {
 		return estudiantes;
 	}
@@ -15,10 +19,12 @@ public class Curso {
 
 	public String buscarEstudientePorCedula(Estudiante estudiante) {
 		Estudiante elementoEstudiante = null;
+		String mensaje = "El estudiante esta dentro del curso";
 		for (int i = 0; i < estudiantes.size(); i++) {
 			elementoEstudiante = estudiantes.get(i);
 			if (estudiante.getCedula().equals(elementoEstudiante.getCedula())) {
-				System.out.println("El estudiante esta dentro del curso");
+				return mensaje;
+				
 			}
 		}
 		return null;
@@ -29,7 +35,7 @@ public class Curso {
 
 		if (mensaje == null) {
 			estudiantes.add(estudiante);
-			System.out.println("Estudiante matriculado con éxito.");
+			System.out.println("Estudiante matriculado" + estudiante.getNombre() + " " + estudiante.getApellido() + " con éxito.");
 		} else {
 			System.out.println(mensaje);
 		}
