@@ -41,7 +41,7 @@ public class TestDepurar {
 	        	totalContactos=totalContactos+1;
 			}
 	        
-	        System.out.println("Contactos:"+totalContactos);
+	        System.out.println("Contactoss:"+totalContactos);
 	    }
 	  
 	  

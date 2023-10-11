@@ -21,7 +21,7 @@ public class TestTelefono {
 
 	        // Mostrar información de todos los teléfonos
 	        for (Telefono teléfono : teléfonos) {
-	            System.out.println("Número: " + teléfono.getNúmero());
+	            System.out.println("Número: " + teléfono.getNumero());
 	            System.out.println("Tipo: " + teléfono.getTipo());
 	            System.out.println("Estado: " + teléfono.getEstado());
 	            System.out.println();

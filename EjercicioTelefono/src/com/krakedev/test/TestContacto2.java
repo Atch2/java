@@ -10,24 +10,19 @@ public class TestContacto2 {
         Direccion direccion = new Direccion("Av. siempre Viva", "Calle 4");
 
         // Crear una instancia de Contacto
-        Contacto contacto = new Contacto("1234567890", "Juan", "Pérez", direccion);
+        Contacto contacto = new Contacto("1234567890", "Rosa", "Chavez", direccion);
 
         // Mostrar información usando el método imprimir
-        System.out.println("Información del Contacto:");
+        System.out.println("***" + contacto.getNombre() + " " + contacto.getApellido()+ "***");
         contacto.imprimir();
 
-        // Modificar valores usando los métodos setters
-        contacto.setCedula("9876543210");
-        contacto.setNombre("Ana");
-        contacto.setApellido("Gómez");
+        // Crear una instancia de Contacto
+        Contacto contacto2 = new Contacto("1234567890", "Ernesto", "Montoya");
 
-        // Modificar la dirección
-        Direccion nuevaDireccion = new Direccion("Cdl del ejercito", "Pasaje 2B");
-        contacto.setDireccion(nuevaDireccion);
-
-        // Mostrar información actualizada
-        System.out.println("\nInformación del Contacto (actualizada):");
-        contacto.imprimir();
+        // Mostrar información usando el método imprimir
+        System.out.println("***" + contacto2.getNombre() + " " + contacto2.getApellido()+ "***");
+        contacto2.imprimir();
+        
     }
 	}
 
