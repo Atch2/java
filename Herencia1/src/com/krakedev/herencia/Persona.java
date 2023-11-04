@@ -1,4 +1,4 @@
-package com.krakedev.herecia;
+package com.krakedev.herencia;
 
 public class Persona {
 	private String cedula;
@@ -24,4 +24,10 @@ public class Persona {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	@Override
+	public String toString() {
+		return "Persona [cedula=" + cedula + ", nombre=" + nombre + "]";
+	}
+
 }

@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Herencia {
+module Herencia1 {
 }

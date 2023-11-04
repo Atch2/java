@@ -1,4 +1,4 @@
-package com.krakedev.herecia;
+package com.krakedev.herencia;
 
 public class Animal {
 	public void dormir() {

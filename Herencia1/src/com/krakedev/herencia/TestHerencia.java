@@ -1,4 +1,7 @@
-package com.krakedev.herecia;
+package com.krakedev.herencia;
+
+import com.krakedev.herencia.Animal;
+import com.krakedev.herencia.Perro;
 
 public class TestHerencia {
 
@@ -6,7 +9,6 @@ public class TestHerencia {
 		Perro p = new Perro();
 		p.dormir();
 		Animal a = new Animal();
-		System.out.println(a.hashCode());
 		p.ladrar();
 	}
 
