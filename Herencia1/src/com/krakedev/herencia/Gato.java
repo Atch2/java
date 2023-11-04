@@ -7,4 +7,13 @@ public class Gato extends Animal{
 		super.dormir();
 		System.out.println("Gato durmiendo");
 	}
+	
+
+	public void maullar() {
+		System.out.println("miau miau");
+	}
+	
+	public void maullar(String adjetivo) {
+		System.out.println("Gato maullando " + adjetivo);
+	}
 }
